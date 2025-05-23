@@ -1,0 +1,282 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+}
+
+.main-container {
+  background: linear-gradient(145deg, #1a1a00, #333300);
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(255, 255, 0, 0.2);
+  width: 95%;
+  max-width: 1200px;
+}
+
+.content-box {
+  background-color: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  height: 700px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 80px;
+  background-color: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #f0c000;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.menu-item.active {
+  color: #f0c000;
+}
+
+.main {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top-bar {
+  margin-bottom: 10px;
+}
+
+.top-bar h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.top-bar p {
+  margin: 5px 0 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+#cityInput {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+  background: #2c2c2c;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0c000;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #ffd700;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.weather-today {
+  display: flex;
+  gap: 20px;
+  min-height: 180px;
+}
+
+.weather-box {
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 16px;
+  flex: 1;
+}
+
+.weather-temp {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.weather-condition {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #f0c000;
+}
+
+.weather-location {
+  font-size: 16px;
+  color: #aaa;
+}
+
+.highlight {
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 16px;
+  flex: 2;
+}
+
+.highlight-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.highlight-box div {
+  padding: 8px 0;
+  border-bottom: 1px solid #444;
+}
+
+.forecast {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+
+.forecast-box, .rainfall-box, .other-countries {
+  background: #2c2c2c;
+  border-radius: 16px;
+  padding: 20px;
+  flex: 1;
+}
+
+.forecast-box h3, .rainfall-box h3, .other-countries h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #f0c000;
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.day {
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  background: #3a3a3a;
+  border-radius: 10px;
+  flex: 1;
+  margin: 0 5px;
+}
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.pie {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  font-weight: bold;
+  color: #000;
+}
+
+.sun {
+  background: orange;
+}
+
+.rain {
+  background: #3498db;
+}
+
+.country {
+  margin-top: 10px;
+  font-size: 14px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #f0c000;
+}
+
+@media (max-width: 768px) {
+  .content-box {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    margin-bottom: 0;
+  }
+  
+  .menu {
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .weather-today, .forecast {
+    flex-direction: column;
+  }
+  
+  .highlight-box {
+    grid-template-columns: 1fr;
+  }
+}
