@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-container">
+    <div class="content-box">
+      <div class="container">
+        <aside class="sidebar">
+          <div class="logo">UI</div>
+          <div class="menu">
+            <div class="menu-item active">🏠</div>
+            <div class="menu-item">🌦️</div>
+            <div class="menu-item">📊</div>
+            <div class="menu-item">⚙️</div>
+          </div>
+        </aside>
+
+        <main class="main">
+          <header class="top-bar">
+            <h2>Good Morning, Pawan!</h2>
+            <p id="currentDate">Friday, 23 May, 2025</p>
+          </header>
+          
+          <section class="search-section">
+            <input type="text" id="cityInput" placeholder="Enter city name" />
+            <button onclick="getWeather()">Search</button>
+            <div id="errorMsg" class="error-message"></div>
+          </section>
+
+          <section class="weather-today">
+            <div class="weather-box" id="currentWeather">
+              <div class="weather-temp">--°C</div>
+              <div class="weather-condition">--</div>
+              <div class="weather-location">Search for a city</div>
+            </div>
+
+            <div class="highlight" id="weatherHighlights">
+              <div class="highlight-box">
+                <div><strong>Sunrise:</strong> --:-- AM</div>
+                <div><strong>Sunset:</strong> --:-- PM</div>
+                <div><strong>Wind:</strong> -- km/h</div>
+                <div><strong>UV:</strong> --</div>
+                <div><strong>Humidity:</strong> --%</div>
+                <div><strong>Visibility:</strong> -- km</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="forecast">
+            <div class="forecast-box" id="forecastContainer">
+              <h3>5 Days Forecast</h3>
+              <div class="days" id="forecastDays">
+                <div class="day">--<br/>--<br/>--°C</div>
+                <div class="day">--<br/>--<br/>--°C</div>
+                <div class="day">--<br/>--<br/>--°C</div>
+                <div class="day">--<br/>--<br/>--°C</div>
+                <div class="day">--<br/>--<br/>--°C</div>
+              </div>
+            </div>
+
+            <div class="rainfall-box">
+              <h3>Weather Distribution</h3>
+              <div class="chart">
+                <div class="pie sun" id="weatherSun">--%</div>
+                <div class="pie rain" id="weatherRain">--%</div>
+              </div>
+            </div>
+
+            <div class="other-countries">
+              <h3>Major Cities</h3>
+              <div class="country" id="city1">
+                <div>London, UK<br/>-- --°C</div>
+              </div>
+              <div class="country" id="city2">
+                <div>New York, US<br/>-- --°C</div>
+              </div>
+              <div class="country" id="city3">
+                <div>Tokyo, Japan<br/>-- --°C</div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
